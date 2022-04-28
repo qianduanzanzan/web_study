@@ -4,8 +4,9 @@ export default {
     // console.log(el, binding.value, vnode)
     console.log(binding.value.data[0]);
     const tr = el.querySelector("tr");
-    el.querySelector("tbody").style.height = `${tr.clientHeight * binding.value.data.length
-      }px`;
+    el.querySelector("tbody").style.height = `${
+      tr.clientHeight * binding.value.data.length
+    }px`;
     console.log(el.querySelector(".el-scrollbar__view"));
     // console.log(el.querySelector('tr'))
   },

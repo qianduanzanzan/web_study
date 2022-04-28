@@ -209,28 +209,28 @@
 
 // console.table({aaa:1,bbb:2,ccc:3})
 
-class aaa{
-    static xxx = 66;
-    constructor(name,value){
-        this.name = name
-        this.value = value
-    }
-}
-const a = new aaa('小明','23')
-console.log(a)
+// class aaa{
+//     static xxx = 66;
+//     constructor(name,value){
+//         this.name = name
+//         this.value = value
+//     }
+// }
+// const a = new aaa('小明','23')
+// console.log(a)
 
-class bbb extends aaa{
-    constructor(name,value,age){
-        super(name,value)
-        this.age = age
-    }
-}
+// class bbb extends aaa{
+//     constructor(name,value,age){
+//         super(name,value)
+//         this.age = age
+//     }
+// }
 
-console.log(aaa.xxx)
-aaa.xxx = 888
-console.log(aaa.xxx)
+// console.log(aaa.xxx)
+// aaa.xxx = 888
+// console.log(aaa.xxx)
 
-console.log(new bbb('小明','23',25))
+// console.log(new bbb('小明','23',25))
 
 // function testAaa(target){
 //     target.vvv = true
@@ -250,8 +250,20 @@ class newClass{
     }
 }
 
-console.log(new newClass('xxx'))
+// console.log(new newClass('xxx'))
 const ass = new newClass('xxx')
 // newClass.toString()
-ass.toString()
-newClass.toString.call(ass)
+// ass.toString()
+// newClass.toString.call(ass)
+const arr = []
+const date = new Date()
+const s = Symbol('k')
+
+function getType(data){
+    const type = Object.prototype.toString.call(data);
+    return type.replace(/(\[object |])/g, '')
+}
+console.log(getType(s))
+console.log(getType(arr))
+console.log(getType(date))
+console.log(getType(ass))

@@ -9,12 +9,14 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "pinia": "^2.0.13",
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.14",
     "element-plus": "^2.1.11",
+    "esbuild-windows-64": "^0.14.38",
+    "monaco-editor": "^0.33.0",
+    "pinia": "^2.0.13",
     "sass": "^1.50.1",
-    "sass-loader": "^12.6.0"
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
