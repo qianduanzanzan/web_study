@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="aaa.js"></script>
+    <script>
+        console.log(window)
+    </script>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    .windmill{
+        margin-top: 300px;
+        position: relative;
+        display: inline-block;
+    }
+    .fanBlades{
+        height: 160px;
+        width: 160px;
+        animation: test 1s linear infinite;
+    }
+    @keyframes test{
+        0%{
+            transform: rotate(0deg);
+        }
+        /* 20%{
+            transform: rotate(-90deg);
+        }
+        50%{
+            transform: rotate(-180deg);
+        }
+        80%{
+            transform: rotate(-270deg);
+        } */
+        100%{
+            transform: rotate(-360deg);
+        }
+    }
+    .pole{
+        width: 6px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: calc(50% - 3px);
+        top: calc(50% - 3px);
+        border-radius: 3px;
+        z-index: 1;
+    }
+    .fanBlade1{
+        width: 0px;
+        height: 0px;
+        border-top: 40px solid blue;
+        border-right: 40px solid blue;
+        border-bottom: 40px solid #ffffff;
+        border-left: 40px solid #ffffff;
+    }
+    .fanBlade2{
+        width: 0px;
+        height: 0px;
+        border-top: 40px solid #ffffff;
+        border-right: 40px solid green;
+        border-bottom: 40px solid green;
+        border-left: 40px solid #ffffff;
+    }
+    .fanBlade3{
+        width: 0px;
+        height: 0px;
+        border-top: 40px solid yellow;
+        border-right: 40px solid #ffffff;
+        border-bottom: 40px solid #ffffff;
+        border-left: 40px solid yellow;
+    }
+    .fanBlade4{
+        width: 0px;
+        height: 0px;
+        border-top: 40px solid #ffffff;
+        border-right: 40px solid #ffffff;
+        border-bottom: 40px solid orange;
+        border-left: 40px solid orange;
+    }
+</style>
+<body>
+    <div class="windmill">
+        <div class="fanBlades">
+            <div style="display: flex;">
+                <div class="fanBlade1"></div>
+                <div class="fanBlade2"></div>
+            </div>
+            <div style="display: flex;">
+                <div class="fanBlade3"></div>
+                <div class="fanBlade4"></div>
+            </div>
+        </div>
+        <div class="pole">
+
+        </div>
+    </div>
+    <!-- <div style="margin-top:150px;">
+        <button id="jiasubtn">加速</button>
+        <button id="jiansubtn">减速</button>
+    </div>
+    <div id="sududengji"></div> -->
+    
+    <!-- <script>
+        const fanBlades = document.querySelector('.fanBlades')
+        let deg = 0
+        let step = 1
+        let time = 20
+        var arr = []
+        const s1 = setInterval(() => {
+            fanBlades.style.transform = `rotate(-${deg}deg)`
+            // if(step < 5){
+            //     step++
+            // }
+            // deg += step
+            deg++
+            // if(time > 1){
+            //    time-- 
+            // }
+        },time)
+        arr.push(s1)
+        const sududengji = document.getElementById('sududengji')
+        sududengji.innerText = `速度等级：${arr.length}`
+        function jiasu(){
+            let s2 = setInterval(() => {
+            fanBlades.style.transform = `rotate(-${deg}deg)`
+            deg++
+        },time)
+            arr.push(s2)
+            sududengji.innerText = `速度等级：${arr.length}`
+        }
+        function jiansu(){
+            if(arr.length > 1){
+                clearInterval(arr[arr.length - 1])
+                arr.splice(arr.length - 1,1)
+            }
+            sududengji.innerText = `速度等级：${arr.length}`
+        }
+        const jiasubtn = document.getElementById('jiasubtn')
+        jiasubtn.addEventListener('click',jiasu)
+        const jiansubtn = document.getElementById('jiansubtn')
+        jiansubtn.addEventListener('click',jiansu)
+    </script> -->
+</body>
+</html>

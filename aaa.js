@@ -236,34 +236,139 @@
 //     target.vvv = true
 // }
 // @testAaa
-class newClass{
-    constructor(sss){
-        this.sss = sss
-    }
+// class newClass{
+//     constructor(sss){
+//         this.sss = sss
+//     }
 
-    toString(){
-        console.log(this.sss)
-    }
+//     toString(){
+//         console.log(this.sss)
+//     }
 
-    static toString(){
-        console.log(this.sss)
-    }
-}
+//     static toString(){
+//         console.log(this.sss)
+//     }
+// }
 
-// console.log(new newClass('xxx'))
-const ass = new newClass('xxx')
-// newClass.toString()
-// ass.toString()
-// newClass.toString.call(ass)
-const arr = []
-const date = new Date()
-const s = Symbol('k')
+// // console.log(new newClass('xxx'))
+// const ass = new newClass('xxx')
+// // newClass.toString()
+// // ass.toString()
+// // newClass.toString.call(ass)
+// const arr = []
+// const date = new Date()
+// const s = Symbol('k')
 
-function getType(data){
-    const type = Object.prototype.toString.call(data);
-    return type.replace(/(\[object |])/g, '')
-}
-console.log(getType(s))
-console.log(getType(arr))
-console.log(getType(date))
-console.log(getType(ass))
+// function getType(data){
+//     const type = Object.prototype.toString.call(data);
+//     return type.replace(/(\[object |])/g, '')
+// }
+// console.log(getType(s))
+// console.log(getType(arr))
+// console.log(getType(date))
+// console.log(getType(ass))
+
+// let arr = []
+//  function addCurry() {
+//     //  console.log(Object.prototype.toString.call(arguments))
+//      let arg = Array.prototype.slice.call(arguments); // 递归获取后续参数
+//      console.log(arg)
+//     //  arr = arr.concat(arg);
+//     //   if (arg.length === 0) { // 如果参数为空，则判断递归结束
+//     //       return arr.reduce((a,b)=>{return a+b}) // 求和
+//     //   } else {
+//     //       return addCurry;
+//     //   }
+//   }
+// addCurry(1,3)
+// console.log(addCurry(1))
+
+// export const a = 1
+
+// export function sayHi(){
+//   console.log('hi')
+// }
+
+// const xsxsxs = new Promise((resolve,reject) => {
+//   setTimeout(() => {
+//     resolve(123456)
+//   },1000)
+// })
+
+// async function test(){
+//   const xxx = await xsxsxs
+//   // return xxx
+// }
+
+// test().then(res => {
+//   console.log(res,888)
+// })
+
+// const a = [
+//   {
+//     a: () => {
+//       console.log(1)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(2)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(3)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(4)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(5)
+//       throw new Error(123)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(6)
+//       return true
+//     }
+//   },
+//   {
+//     a: () => {
+//       console.log(7)
+//       return true
+//     }
+//   }
+// ]
+
+// console.log(a.every(item => item.a()))
+
+// for (var index = 0; index < 10; index++) {
+//   ((i) => {
+//     setTimeout(() => {
+//       console.log(i)
+//     });
+//   })(index)
+// }
+
+// try{
+//   [1,2,3,4,5,6,7,8,9].forEach(item => {
+//     console.log(item)
+//     if(item > 7){
+//       throw new Error()
+//     }
+//   })
+// }catch(e){}
+
+// console.log('结束')
+
+var a = 1

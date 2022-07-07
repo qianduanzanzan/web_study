@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3504147 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1657098730082') format('woff2'),
+       url('iconfont.woff?t=1657098730082') format('woff'),
+       url('iconfont.ttf?t=1657098730082') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xuegao:before {
+  content: "\e65a";
+}
+
+.icon-kele:before {
+  content: "\e65c";
+}
+
+.icon-baomihua:before {
+  content: "\e660";
+}
+
+.icon-tianfuluo:before {
+  content: "\e663";
+}
+
+.icon-paomian:before {
+  content: "\e689";
+}
+
+.icon-shousi:before {
+  content: "\e691";
+}
+
+.icon-doufu:before {
+  content: "\e694";
+}
+
+.icon-zhouzi:before {
+  content: "\e697";
+}
+
+.icon-suannai:before {
+  content: "\e699";
+}
+
+.icon-pisa:before {
+  content: "\e69a";
+}
+
+.icon-tongluoshao:before {
+  content: "\e69d";
+}
+
+.icon-nuomici:before {
+  content: "\e69e";
+}
+
+.icon-roujiamo:before {
+  content: "\e6a0";
+}
+
+.icon-zhangyuxiaowanzi:before {
+  content: "\e6a2";
+}
+
+.icon-chengzhi:before {
+  content: "\e6a3";
+}
+
+.icon-hebaodan:before {
+  content: "\e6a6";
+}
+
+.icon-bingtanghulu:before {
+  content: "\e6a7";
+}
+
+.icon-qianceng:before {
+  content: "\e6aa";
+}
+
+.icon-shengjian:before {
+  content: "\e6ad";
+}
+
+.icon-youtiao:before {
+  content: "\e6ae";
+}
+
+.icon-yuzijiang:before {
+  content: "\e6af";
+}
+
+.icon-zhutongfan:before {
+  content: "\e6b0";
+}
+
+.icon-doujiang:before {
+  content: "\e6b1";
+}
+
+.icon-sanmingzhi:before {
+  content: "\e6b2";
+}
+
+.icon-paofu:before {
+  content: "\e6b3";
+}
+
+.icon-dangaojuan:before {
+  content: "\e6b5";
+}
+
+.icon-danta:before {
+  content: "\e6ba";
+}
+
+.icon-xiangcaobingqilin:before {
+  content: "\e6c2";
+}
+
+.icon-jiaozi:before {
+  content: "\e6c3";
+}
+
+.icon-tilamisu:before {
+  content: "\e6c4";
+}
+
+.icon-huoguo:before {
+  content: "\e6c5";
+}
+
+.icon-hongshu:before {
+  content: "\e6c6";
+}
+
+.icon-mianhuatang:before {
+  content: "\e6c8";
+}
+
+.icon-jiroujuan:before {
+  content: "\e6ce";
+}
+
+.icon-guodong:before {
+  content: "\e6cf";
+}
+
+.icon-kafei:before {
+  content: "\e657";
+}
+

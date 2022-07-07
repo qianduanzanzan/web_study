@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.flex{
+    display: flex;
+    &.a-c{
+        align-items: center;
+    }
+    &.a-e{
+        align-items: flex-end;
+    }
+    &.j-s-a{
+        justify-content: space-around;
+    }
+    &.j-s-b{
+        justify-content: space-between;
+    }
+    &.j-c{
+        justify-content: center;
+    }
+    &.j-e{
+        justify-content: flex-end;
+    }
+}
+
+@each $size in (4,8,10,16,20,24,40,60,80) {
+    .m-#{$size}{
+        margin: $size+px;
+    }
+
+    .p-#{$size}{
+        padding: $size+px;
+    }
+    .m-t-#{$size}{
+        margin-top: $size+px;
+    }
+    .m-l-#{$size}{
+        margin-left: $size+px;
+    }
+    .m-b-#{$size}{
+        margin-bottom: $size+px;
+    }
+    .m-r-#{$size}{
+        margin-right: $size+px;
+    }
+
+    .p-t-#{$size}{
+        padding-top: $size+px;
+    }
+    .p-l-#{$size}{
+        padding-left: $size+px;
+    }
+    .p-b-#{$size}{
+        padding-bottom: $size+px;
+    }
+    .p-r-#{$size}{
+        padding-right: $size+px;
+    }
+}
+
+.pointer{
+    cursor: pointer;;
+}

@@ -20,6 +20,9 @@
             font-size: 40px;
             cursor: pointer;
         }
+        #xxx{
+            height: 150vh;
+        }
     </style>
     <!-- <div id="aaa" class="checkerboard">
         <div id="1-1"></div>
@@ -32,7 +35,9 @@
         <div id="3-2"></div>
         <div id="3-3"></div>
     </div> -->
-    <div id="xxx">1231231</div>
+    <div id="xxx">
+        <div style="height: 200vh;width: 100vw;"></div>
+    </div>
     <script>
         function ddd(){
             console.log(666)
@@ -40,25 +45,38 @@
     </script>
     
     <script>
-        const temp = console.log
-        console.log = function(){
-            const arg = Array.from(arguments)
-            arg.forEach(item => {
-                document.write(`${item}<br>`) 
-            });
-            temp(...arguments)
-        }
-        const a = `
+        // window.onscroll = e => {
+        //     e.preventDefault()
+        //     console.log(e)
+        // }
+        // const xxx = document.getElementById('xxx')
+        console.log(xxx.addEventListener)
+        xxx.addEventListener('scroll', e => {
             console.log(111)
-            function xxx(data){
-                console.log(data)
-            }
-            xxx('张三');
-            ddd()
-        `
-        const script1 = document.createElement('script')
-        script1.innerHTML = a
-        document.body.appendChild(script1)
+        })
+        console.log(...[1,2,3])
+        // xxx.addEventListener('scroll',e => {
+        //     conosle.log(e)
+        // })
+        // const temp = console.log
+        // console.log = function(){
+        //     const arg = Array.from(arguments)
+        //     arg.forEach(item => {
+        //         document.write(`${item}<br>`) 
+        //     });
+        //     temp(...arguments)
+        // }
+        // const a = `
+        //     console.log(111)
+        //     function xxx(data){
+        //         console.log(data)
+        //     }
+        //     xxx('张三');
+        //     ddd()
+        // `
+        // const script1 = document.createElement('script')
+        // script1.innerHTML = a
+        // document.body.appendChild(script1)
         // let nowPlayer = 1
         // const player1Cells = []
         // const player2Cells = []
@@ -101,6 +119,12 @@
         //         }
         //     }, 0);
         //     }
+    </script>
+    <script type="module">
+        console.log(111,'里面输出的')
+        import {a,sayHi} from './aaa.js'
+        console.log(a)
+        sayHi()
     </script>
 </body>
 </html>
