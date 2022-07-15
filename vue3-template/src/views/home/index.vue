@@ -6,9 +6,14 @@
 </template>
 
 <script lang="ts" setup>
+import { getPublicDropDownList } from "@/api/test"
 import { useRouter, useRoute } from 'vue-router';
 const router = useRouter(), route = useRoute();
 const jump2admin = () => {
     router.push({ name: 'admin' })
 }
+getPublicDropDownList()
+// .then((res: any) => {
+//     console.log(res)
+// })
 </script>

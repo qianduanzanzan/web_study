@@ -1,12 +1,16 @@
-<template>
-    <div>
-        <div style="width: 300px;height: 300px" id="charts1"></div>
-    </div>
-</template>
-
 <script lang="ts" setup>
 import { onMounted } from 'vue';
+import store from '@/store';
 import * as echarts from 'echarts';
+import { storeToRefs } from 'pinia'
+import test from './test.vue'
+
+console.log(store)
+
+const useStores: any = storeToRefs(store.test())
+
+console.log(useStores.name)
+
 
 onMounted(() => {
     // 基于准备好的dom，初始化echarts实例
@@ -33,3 +37,15 @@ onMounted(() => {
 })
 
 </script>
+
+<template>
+    <div>
+        <div style="width: 300px;height: 300px" id="charts1"></div>
+    </div>
+    {{ useStores.count }}
+    {{ useStores.name }}
+    {{ useStores.xxx }}
+    <div>
+        <test />
+    </div>
+</template>

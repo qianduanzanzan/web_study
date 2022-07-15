@@ -9,7 +9,9 @@
             <el-icon :size="20" class="m-r-20 pointer">
                 <full-screen v-if="!isFull" />
             </el-icon>
-            <el-avatar class="m-r-8" :size="40" />
+            <el-avatar
+                src="https://img2.baidu.com/it/u=4244269751,4000533845&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1657904400&t=7b3f50c245381077202716389811f4fe"
+                class="m-r-8" :size="40" />
             <el-dropdown>
                 <span class="el-dropdown-link">
                     admin
