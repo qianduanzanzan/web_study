@@ -5,12 +5,7 @@ import * as echarts from 'echarts';
 import { storeToRefs } from 'pinia'
 import test from './test.vue'
 
-console.log(store)
-
 const useStores: any = storeToRefs(store.test())
-
-console.log(useStores.name)
-
 
 onMounted(() => {
     // 基于准备好的dom，初始化echarts实例

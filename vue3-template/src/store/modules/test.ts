@@ -5,7 +5,7 @@ export default {
         count: 1
     }),
     getters: {
-        xxx(state) {
+        xxx(state: any) {
             return `${state.name}-${state.count}`
         }
     },
@@ -16,8 +16,6 @@ export default {
             this.name = this.name == 'xxx' ? '疫情快过去吧' : 'xxx'
             this.count += 2
         },
-        show() {
-            console.log(this)
-        }
+        show() { }
     }
 }

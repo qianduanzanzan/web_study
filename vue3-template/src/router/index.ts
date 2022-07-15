@@ -24,6 +24,15 @@ export const adminRouterChildren = [
         meta: {
             title: '图标'
         }
+    },
+    {
+        path: '/admin/mockTable',
+        name: 'mockTable',
+        component: () => import("@/views/admin/views/mockTable/index.vue"),
+        icon: 'jiaozi',
+        meta: {
+            title: '虚拟表格'
+        }
     }
 ]
 // 路由记录，这个跟vue2中用法一致，就不做过多解释了

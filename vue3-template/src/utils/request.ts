@@ -11,7 +11,6 @@ axios.defaults.withCredentials = false;
 
 axios.interceptors.request.use(
     (config) => {
-        console.log(config)
         //   const meta = config.meta || {};
         //   const isToken = meta.isToken === false;
         //   if (getToken() && !isToken) {
@@ -30,7 +29,7 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
     (res) => {
-        console.log(res)
+        // console.log(res)
         //   NProgress.done();
         //   const status = Number(res.status) || 200;
         //   const statusWhiteList = website.statusWhiteList || [];
