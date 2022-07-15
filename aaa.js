@@ -371,4 +371,115 @@
 
 // console.log('结束')
 
-var a = 1
+// var a = 1
+
+// const _createArray = (number) => {
+//     // 补全代码
+//     const arr = new Array(number)
+//     arr.fill(3)
+//     return arr
+// }
+// // _createArray(3)
+// console.log(_createArray(3))
+
+// const _shouldUpdate = (oldVersion, newVersion) => {
+//     // 补全代码
+//     const a = Number(oldVersion.replace(/\./g,''))
+//     const b = Number(newVersion.replace(/\./g,''))
+//     console.log(a,b)
+    
+//     return b > a
+// }
+// const _getUniqueNums = (start,end,n) => {
+//     // 补全代码
+//     const difference = end - start
+//     const arr = new Set()
+//     for(let i = 0;i < n;i++){
+//         arr.add(parseInt(Math.random() * difference) + start)
+//     }
+//     return Array.from(arr)
+// }
+
+// console.log(_getUniqueNums(2,10,4))
+// // console.log(_shouldUpdate('0.0.2','0.0.0'))
+// document.addEventListener
+
+
+// const _delete = (array,index) => {
+//     // 补全代码
+//     return array.filter((item,idx)=> index != idx)
+// }
+
+// console.log(_delete([1,2,3],1))
+
+// class Human {
+//     constructor(name) {
+//         this.name = name
+//         this.kingdom = 'animal'
+//         this.color = ['yellow', 'white', 'brown', 'black']
+//     }
+//     // 补全代码
+//     getName() {
+//         return this.name
+//     }
+// }
+
+// // 补全代码
+// class Chinese extends Human{
+//     constructor(name,age) {
+//         super(name)
+//         this.age = age
+//     }
+//     getAge() {
+//         return this.age
+//     }
+// }
+
+// console.log('https://nowcoder.com/online?id=1&salas=1000'.replace(/(.*)\?/g,''))
+
+// document.querySelector
+
+// const _rank = array => {
+//     // 补全代码
+//     const arr = array.sort((a,b) => {
+//         console.log((a.chinese + a.math + a.english) - (b.chinese + b.math + b.english))
+//         return (a.chinese + a.math + a.english) - (b.chinese + b.math + b.english)
+//     })
+//     return arr
+// }
+
+// let grade = [{name: 'nowcoder1',chinese: 73,math: 80,english: 72},{name: 'nowcoder2',chinese: 59,math: 53,english: 36},{name: 'nowcoder3',chinese: 94,math: 96,english: 94}];
+// let array = _rank(grade)
+// console.log(array)
+
+// const _searchStrIndexOf = (str, target) => {
+//     // 补全代码
+//     let count = 0
+//     let index = str.indexOf(target)
+//     console.log(index)
+//     if(index > -1){
+//         count++
+//         count += _searchStrIndexOf(str.substr(index + target.length), target)
+//     }
+//     return count
+// }
+
+// console.log(_searchStrIndexOf('axaxacaxas','ax'))
+
+const _isFibonacci = array => {
+    // 补全代码
+    if(array.length < 3){
+        return false
+    }
+    let flag = true
+    array.reduce((a,b) => {
+        console.log(a,b)
+        if(a !== 0 && b === 0 && a !== b){
+            flag = false
+        }
+        return b
+    })
+    return flag
+}
+
+console.log(_isFibonacci([0,1,1,2,3,6]))
