@@ -29,9 +29,27 @@ export const adminRouterChildren = [
         path: '/admin/mockTable',
         name: 'mockTable',
         component: () => import("@/views/admin/views/mockTable/index.vue"),
-        icon: 'jiaozi',
+        icon: 'kele',
         meta: {
             title: '虚拟表格'
+        }
+    },
+    {
+        path: '/admin/canvas',
+        name: 'canvas',
+        component: () => import("@/views/admin/views/canvas/index.vue"),
+        icon: 'kafei',
+        meta: {
+            title: 'canvas'
+        }
+    },
+    {
+        path: '/admin/worker',
+        name: 'worker',
+        component: () => import("@/views/admin/views/worker/index.vue"),
+        icon: 'tilamisu',
+        meta: {
+            title: 'worker'
         }
     }
 ]

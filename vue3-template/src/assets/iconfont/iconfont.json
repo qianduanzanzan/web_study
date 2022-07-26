@@ -6,6 +6,27 @@
   "description": "自己测试项目用的",
   "glyphs": [
     {
+      "icon_id": "166648",
+      "name": "文字",
+      "font_class": "wenzi",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "15937155",
+      "name": "橡皮擦",
+      "font_class": "xiangpica",
+      "unicode": "e7f1",
+      "unicode_decimal": 59377
+    },
+    {
+      "icon_id": "7789609",
+      "name": "画笔",
+      "font_class": "huabi",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
       "icon_id": "27914771",
       "name": "雪糕",
       "font_class": "xuegao",

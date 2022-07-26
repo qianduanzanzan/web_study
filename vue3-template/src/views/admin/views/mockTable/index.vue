@@ -1,4 +1,5 @@
 <template>
+    <!-- 模拟表格增删改查 -->
     <el-card>
         <div>
             <el-button @click="open()">新增</el-button>
