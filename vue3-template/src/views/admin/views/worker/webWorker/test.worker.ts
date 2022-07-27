@@ -1,18 +1,15 @@
-// var i = 0;
-// function timedCount() {
-//     i = i + 1;
-//     postMessage(i);
-//     setTimeout(timedCount, 1000);
-// }
-// timedCount();
-
 onmessage = function (e) {
+    console.log(...arguments)
     if (e.data === 'total') {
         let total = 1;
 
-        for (let i = 0; i < 5000000000; i++) {
+        for (let i = 0; i < 850; i++) {
             total += i;
+            console.log('worker', total)
         }
         postMessage(total);
+    } else {
+        console.log(e)
     }
 }
+

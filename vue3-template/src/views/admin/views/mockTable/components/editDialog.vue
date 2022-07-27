@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineExpose, defineEmits } from 'vue';
+import { ref, defineExpose } from 'vue';
 import { addNew, editNew } from '@/api/mock'
 let dialogVisible = ref(false)
 let title = ref('')

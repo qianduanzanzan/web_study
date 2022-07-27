@@ -3,18 +3,27 @@
         123456
         <el-button @click="test">测试</el-button>
         <el-button @click="test1">测试1</el-button>
+        <el-button @click="test2">测试2</el-button>
+        <div ref="xxx"></div>
     </div>
 </template>
 
 <script lang="ts" setup>
-// if (window.Worker) {
-// const myWorker = new Worker('./webWorker/test.ts');
+// import { ref } from "vue";
+import Worker from "./webWorker/test.worker.ts?worker"
+const myWorker = new Worker()
+myWorker.onmessage = function (e) {
+    console.log('total', e.data);
+};
 
-// myWorker.onmessage = function (e) {
-//     console.log('total', e.data);
-// };
+// const xxx = 123
 
-var test = () => {
+const test2 = () => {
+    console.log(myWorker)
+    myWorker.postMessage('xxx');
+}
+
+const test = () => {
     let total = 1;
     for (let i = 0; i < 5000000000; i++) {
         total += i;
@@ -22,20 +31,12 @@ var test = () => {
     console.log('total', total);
 }
 
-var test1 = () => {
-    console.log(1)
-    // myWorker.postMessage('total');
+const test1 = () => {
+    myWorker.postMessage('total');
+    let total = 1;
+    for (let i = 0; i < 500; i++) {
+        total += i;
+        console.log(total)
+    }
 }
-// const worker = new Worker('./util/test.ts');
-// worker.onmessage = (e) => {
-//     console.log(e)
-// }
-
-// worker.onmessageerror = (e) => {
-//     console.log(e)
-// }
-
-// const test = () => {
-//     worker.postMessage({ type: 'start', payload: { count: 666 } });
-// }
 </script>
