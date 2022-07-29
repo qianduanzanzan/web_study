@@ -51,6 +51,15 @@ export const adminRouterChildren = [
         meta: {
             title: 'worker'
         }
+    },
+    {
+        path: '/admin/fabric',
+        name: 'fabric',
+        component: () => import("@/views/admin/views/fabric/index.vue"),
+        icon: 'chengzhi',
+        meta: {
+            title: 'fabric'
+        }
     }
 ]
 // 路由记录，这个跟vue2中用法一致，就不做过多解释了

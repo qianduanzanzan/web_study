@@ -83,7 +83,7 @@
         </el-tooltip>
     </div>
     <div ref="canvasMian" class="canvasMian" droppable @dragover.prevent @drop.prevent="xxx">
-        <canvas :width="canvasWidth" :height="canvasHeight" @mousemove="draw" @mousedown="beginDraw"
+        <canvas :width="canvasWidth" :height="canvasHeight" @mousemove="draw" @mousedown.left="beginDraw"
             @mouseleave="endDraw" @mouseup="endDraw" ref="canvas"></canvas>
         <div class="canvas-input"
             :style="{ display: canvasInputDisplay, top: `${canvasInputTop}px`, left: `${canvasInputLeft}px` }">
@@ -125,7 +125,41 @@ onMounted(() => {
     canvasHeight.value = canvasMian.value.clientHeight
     ctx = canvas.value.getContext('2d')
     ctx.lineCap = "round";
+    console.log(ctx)
+    setTimeout(() => {
+        drawCircular(75)
+    }, 0);
+
 })
+
+const drawCircular = (num: number) => {
+    ctx.moveTo(300, 300)
+    let count = 0
+    let a = 1.5 * Math.PI
+    ctx.lineCap = "round";
+    ctx.lineWidth = 16
+    const x = setInterval(() => {
+        count++
+        ctx.strokeStyle = '#409eff'
+        ctx.fillStyle = '#409eff'
+        ctx.lineWidth = '20px'
+        ctx.clearRect(250, 250, 300, 300)
+        ctx.beginPath()
+        a += ((num / 100) * 2 * Math.PI) / 1000
+        ctx.arc(400, 400, 100, 1.5 * Math.PI, a, false)
+        ctx.stroke()
+        ctx.closePath()
+        // ctx.beginPath()
+        // ctx.arc(400, 400, 95, 1.5 * Math.PI, a, false)
+        // ctx.stroke()
+        // ctx.closePath()
+        ctx.font = `30px Arial`
+        ctx.fillText(`${parseInt(`${(count * num / 10) / 100}`)}%`, 375, 412)
+        if (count == 1000) {
+            clearInterval(x)
+        }
+    }, 1)
+}
 
 const onBlur = () => {
     ctx.restore()
