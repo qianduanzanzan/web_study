@@ -60,6 +60,15 @@ export const adminRouterChildren = [
         meta: {
             title: 'fabric'
         }
+    },
+    {
+        path: '/admin/directive',
+        name: 'directive',
+        component: () => import("@/views/admin/views/directive/index.vue"),
+        icon: 'doujiang',
+        meta: {
+            title: 'directive'
+        }
     }
 ]
 // 路由记录，这个跟vue2中用法一致，就不做过多解释了

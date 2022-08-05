@@ -6,6 +6,7 @@ import 'element-plus/dist/index.css'
 import router from './router/index'
 import '@/assets/style/common.scss'
 import components from "./components";
+import directives from "./directives";
 import './assets/iconfont/iconfont.js';
 import { createPinia } from 'pinia';
 import '@/utils/request'
@@ -20,4 +21,5 @@ app.use(ElementPlus, {
 app.use(router)
 app.use(pinia)
 app.use(components);
+app.use(directives);
 app.mount('#app')
