@@ -15,6 +15,10 @@ subType.prototype = new superType()
 
 var subInstance1 = new subType()
 
+const a = {};
+
+a.__proto__ = new superType()
+
 console.log(subInstance1.friends)
 
 subInstance1.sayHi()
@@ -28,3 +32,5 @@ subInstance1.friends.push('小王')
 var subInstance2 = new subType()
 
 console.log(subInstance2.friends)
+
+console.log(a)

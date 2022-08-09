@@ -69,6 +69,15 @@ export const adminRouterChildren = [
         meta: {
             title: 'directive'
         }
+    },
+    {
+        path: '/admin/cc-scroll',
+        name: 'cc-scroll',
+        component: () => import("@/views/admin/views/cc-scroll/index.vue"),
+        icon: 'doujiang',
+        meta: {
+            title: 'cc-scroll'
+        }
     }
 ]
 // 路由记录，这个跟vue2中用法一致，就不做过多解释了
