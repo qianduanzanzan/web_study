@@ -74,9 +74,27 @@ export const adminRouterChildren = [
         path: '/admin/cc-scroll',
         name: 'cc-scroll',
         component: () => import("@/views/admin/views/cc-scroll/index.vue"),
-        icon: 'doujiang',
+        icon: 'hebaodan',
         meta: {
             title: 'cc-scroll'
+        }
+    },
+    {
+        path: '/admin/testApi',
+        name: 'testApi',
+        component: () => import("@/views/admin/views/testApi/index.vue"),
+        icon: 'zhouzi',
+        meta: {
+            title: 'testApi'
+        }
+    },
+    {
+        path: '/admin/cp',
+        name: 'cp',
+        component: () => import("@/views/admin/views/cp/index.vue"),
+        icon: 'zhouzi',
+        meta: {
+            title: 'cp'
         }
     }
 ]
@@ -99,7 +117,15 @@ const routes: Array<RouteRecordRaw> = [
             title: 'admin页面'
         },
         children: adminRouterChildren
-    }
+    },
+    {
+        path: '/game',
+        name: 'game',
+        component: () => import("@/game/index.vue"),
+        meta: {
+            title: '游戏'
+        }
+    },
 ];
 
 const router = createRouter({

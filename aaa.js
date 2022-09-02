@@ -466,20 +466,52 @@
 
 // console.log(_searchStrIndexOf('axaxacaxas','ax'))
 
-const _isFibonacci = array => {
-    // 补全代码
-    if(array.length < 3){
-        return false
-    }
-    let flag = true
-    array.reduce((a,b) => {
-        console.log(a,b)
-        if(a !== 0 && b === 0 && a !== b){
-            flag = false
-        }
-        return b
-    })
-    return flag
+// const _isFibonacci = array => {
+//     // 补全代码
+//     if(array.length < 3){
+//         return false
+//     }
+//     let flag = true
+//     array.reduce((a,b) => {
+//         console.log(a,b)
+//         if(a !== 0 && b === 0 && a !== b){
+//             flag = false
+//         }
+//         return b
+//     })
+//     return flag
+// }
+
+// console.log(_isFibonacci([0,1,1,2,3,6]))
+
+// const a = []
+
+// console.log(JSON.stringify(a) == JSON.stringify([]))
+
+// console.log(JSON.stringify(a))
+
+// const add = (...a) => {
+//     let res = a.reduce((pre, cur) => pre + cur);
+//     const add_ = (...b) => add(res, ...b);
+//     // 因为每次返回的都是add_，因此要给它绑toString方法
+//     add_.toString = () => {
+//         return res;
+//     };
+//     return add_;
+// };
+
+// console.log(+add(1,2)(3)(4,5))
+
+const target = {
+    name: '小浪',
+    age: 22,
 }
 
-console.log(_isFibonacci([0,1,1,2,3,6]))
+const target1 = [0,1,2,3,4,5,6,7,8,9]
+
+// console.log(Reflect.get(target,'name'))
+// Reflect.deleteProperty(target, 'age')
+// console.log(target)
+
+Reflect.deleteProperty(target1, 3)
+console.log(target1[3])

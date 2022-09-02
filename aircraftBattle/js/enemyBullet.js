@@ -21,25 +21,49 @@ export default class EnemyBullet{
     }
 
     fly(){
-        const a = setInterval(() => {
-            const myAircraft = document.querySelector("#myAircraft")
-            const gameArea = document.querySelector("#game-area")
+        const a = () => {
+            requestAnimationFrame(() => {
+                const myAircraft = document.querySelector("#myAircraft")
+                const gameArea = document.querySelector("#game-area")
 
-            const parentPosition = gameArea.getBoundingClientRect()
-            const position = myAircraft.getBoundingClientRect()
-            this.y += 10
-            this.$el.style.top = `${this.y}px`
-            if(this.y >= this.parentHeight){
-                this.parent.removeChild(this.$el)
-                clearInterval(a)
-                this.fn()
-            }
-            if(this.y + 80 >= position.top && this.y + 80 <= position.bottom){
-                if(this.x >= position.left - parentPosition.left && this.x <= position.right - parentPosition.left){
-                    alert('你输了')
-                    // location.reload()
+                const parentPosition = gameArea.getBoundingClientRect()
+                const position = myAircraft.getBoundingClientRect()
+                this.y += 2
+                this.$el.style.top = `${this.y}px`
+                if(this.y >= this.parentHeight){
+                    this.parent.removeChild(this.$el)
+                    this.fn()
+                }else{
+                    a()
                 }
-            }
-        },100)
+                if(this.y + 80 >= position.top && this.y + 80 <= position.bottom){
+                    if(this.x >= position.left - parentPosition.left && this.x <= position.right - parentPosition.left){
+                        // alert('你输了')
+                        // location.reload()
+                    }
+                }
+            })
+        }
+        a()
+        // const a = setInterval(() => {
+        //     const myAircraft = document.querySelector("#myAircraft")
+        //     const gameArea = document.querySelector("#game-area")
+
+        //     const parentPosition = gameArea.getBoundingClientRect()
+        //     const position = myAircraft.getBoundingClientRect()
+        //     this.y += 10
+        //     this.$el.style.top = `${this.y}px`
+        //     if(this.y >= this.parentHeight){
+        //         this.parent.removeChild(this.$el)
+        //         clearInterval(a)
+        //         this.fn()
+        //     }
+        //     if(this.y + 80 >= position.top && this.y + 80 <= position.bottom){
+        //         if(this.x >= position.left - parentPosition.left && this.x <= position.right - parentPosition.left){
+        //             alert('你输了')
+        //             // location.reload()
+        //         }
+        //     }
+        // },100)
     }
 }

@@ -10,7 +10,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, "src")
     }
   },
-  assetsInclude: ['webWorker/*.ts']
+  assetsInclude: ['webWorker/*.ts'],
+  server: {
+    port: 8099
+  }
   // css: {
   //   preprocessorOptions: {
   //     scss: {

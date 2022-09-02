@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0;padding: 0; }
+        /* #info{
+            position: absolute;
+            color: #ffffff;
+            font-size: 80px;
+            z-index: 100;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div id="info">张三李四</div> -->
+    <script src="js/three.js"></script>
+	<script>
+		const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+        camera.position.set( 0, 0, 100 );
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
+        const geometry = new THREE.BoxGeometry( 10, 10, 10 );
+        const material = new THREE.MeshBasicMaterial( { color: 0x00ff00, side: THREE.FrontSide });
+        const cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+        const object = new THREE.Object3D();
+        scene.add( object );
+
+        // const lineMaterial = new THREE.LineBasicMaterial({color: 0xff0000})
+        // const points = [];
+        // points.push(new THREE.Vector3(-5.1,-5.1,-5.1))
+        // points.push(new THREE.Vector3(5.1,-5.1,-5.1))
+        // points.push(new THREE.Vector3(5.1,5.1,-5.1))
+        // points.push(new THREE.Vector3(-5.1,5.1,-5.1))
+        // points.push(new THREE.Vector3(-5.1,-5.1,-5.1))
+        // points.push(new THREE.Vector3(-5.1,-5.1,5.1))
+        // points.push(new THREE.Vector3(5.1,-5.1,5.1))
+        // points.push(new THREE.Vector3(5.1,5.1,5.1))
+        // points.push(new THREE.Vector3(-5.1,5.1,5.1))
+        // points.push(new THREE.Vector3(-5.1,-5.1,5.1))
+        // const lineGeometry = new THREE.BufferGeometry().setFromPoints( points );
+        // const line = new THREE.Line( lineGeometry, lineMaterial );
+
+        // scene.add( line );
+
+
+        function animate() {
+            requestAnimationFrame( animate );
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            // line.rotation.x += 0.01;
+            // line.rotation.y += 0.01;
+            renderer.render( scene, camera );
+        }
+        animate();
+	</script>
+</body>
+</html>

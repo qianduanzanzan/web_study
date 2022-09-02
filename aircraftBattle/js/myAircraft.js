@@ -30,29 +30,29 @@ export default class MyAircraft{
 
     addEventListener(){
         window.addEventListener('keydown',(e) => {
-            switch(e.keyCode){
-                case 38:
-                    if(this.bottom + speed + this.height <= gameArea.height){
-                        this.bottom += speed
-                    }
-                    break;
-                case 40:
-                    if(this.bottom - speed >= 0){
-                        this.bottom -= speed
-                    }
-                    break;
-                case 37:
-                    if(this.left - speed >= 0){
-                        this.left -= speed
-                    }
-                    break;
-                case 39:
-                    if(this.left + speed + this.width <= gameArea.width){
-                        this.left += speed
-                    }
-                    break;
-            }
             requestAnimationFrame(() => {
+                switch(e.keyCode){
+                    case 38:
+                        if(this.bottom + speed + this.height <= gameArea.height){
+                            this.bottom += speed
+                        }
+                        break;
+                    case 40:
+                        if(this.bottom - speed >= 0){
+                            this.bottom -= speed
+                        }
+                        break;
+                    case 37:
+                        if(this.left - speed >= 0){
+                            this.left -= speed
+                        }
+                        break;
+                    case 39:
+                        if(this.left + speed + this.width <= gameArea.width){
+                            this.left += speed
+                        }
+                        break;
+                }
                 this.$el.style.bottom = `${this.bottom}px`
                 this.$el.style.left = `${this.left}px`
             })

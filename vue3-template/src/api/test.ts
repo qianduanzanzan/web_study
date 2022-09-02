@@ -7,3 +7,26 @@ export const getPublicDropDownList = () => {
         method: "get",
     });
 };
+
+export const test = (params: any) => {
+    return request({
+        url: 'http://127.0.0.1:7001/app',
+        method: "get",
+        params
+    });
+};
+
+export const test11 = () => {
+    return request({
+        url: 'http://127.0.0.1:7002/hero',
+        method: "get",
+    });
+};
+
+export const test22 = () => {
+    return request({
+        url: 'http://127.0.0.1:7001/test/list',
+        method: "get",
+    });
+};
+

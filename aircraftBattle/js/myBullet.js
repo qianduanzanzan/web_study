@@ -21,15 +21,37 @@ export default class MyBullet{
     }
 
     fly(){
-        const a = setInterval(() => {
-            this.y += 10
-            this.$el.style.bottom = `${this.y}px`
-            if(this.y >= this.parentHeight){
-                this.parent.removeChild(this.$el)
-                clearInterval(a)
-                this.fn()
-            }
-        },100)
-        
+        // const a = setInterval(() => {
+        //     this.y += 2
+        //     this.$el.style.bottom = `${this.y}px`
+        //     if(this.y >= this.parentHeight){
+        //         this.parent.removeChild(this.$el)
+        //         clearInterval(a)
+        //         this.fn()
+        //     }
+        // },1000 / 60)
+        const a = () => {
+            requestAnimationFrame(() => {
+                console.log(111)
+                this.y += 2
+                this.$el.style.bottom = `${this.y}px`
+                if(this.y >= this.parentHeight){
+                    this.parent.removeChild(this.$el)
+                    this.fn()
+                }else{
+                    a()
+                }
+            })
+        }
+        a()
+        // requestAnimationFrame(() => {
+        //     this.y += 10
+        //     this.$el.style.bottom = `${this.y}px`
+        //     if(this.y >= this.parentHeight){
+        //         this.parent.removeChild(this.$el)
+        //         clearInterval(a)
+        //         this.fn()
+        //     }
+        // })
     }
 }

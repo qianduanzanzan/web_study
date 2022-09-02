@@ -2,6 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { ElMessage } from "element-plus";
 
 axios.defaults.timeout = 10000;
+// axios.defaults.baseURL = 'http://127.0.0.1:7001'
 //返回其他状态吗
 axios.defaults.validateStatus = function (status) {
     return status >= 200 && status <= 500; // 默认的
