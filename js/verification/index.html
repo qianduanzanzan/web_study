@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动验证</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .verification-box{
+            position: relative;
+        }
+
+        .verification-img{
+            position: relative;
+            height: 300px;
+        }
+        #verification-item{
+            width: 61px;
+            height: 61px;
+            position: absolute;
+            border: 1px solid #ffffff;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #jigsaw{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .jigsaw-img{
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        #jigsaw-img{
+            position: absolute;
+            user-select: none;
+        }
+
+        .drag-container{
+            height: 61px;
+            padding: 0 0 0 5px;
+            background-color: #cccccc;
+        }
+        .drag-box{
+            background-color: rgba(64, 159, 255, 0.8);
+            height: 100%;
+            position: relative;
+        }
+        #drag-item{
+            height: 60px;
+            width: 60px;
+            background-color: #ffffff;
+            position: absolute;
+        }
+
+        #success{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            display: none;
+            background-color: #000000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-icon{
+            font-size: 60px;
+            padding: 20px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            width: 100px;
+            height: 100px;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="verification-box">
+            <div class="verification-img">
+                <img id="verImg" width="500px" height="300px" src="./img/verification.webp" alt="">
+                <div id="verification-item"></div>
+                <div id="jigsaw">
+                    <div class="jigsaw-img">
+                        <img id="jigsaw-img" draggable="false" width="500px" height="300px" src="./img/verification.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="drag-container">
+                <div class="drag-box">
+                    <div id="drag-item"></div>
+                </div>
+            </div>
+            <div id="success">
+                <div class="success-icon">√</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var verImg = document.querySelector('#verImg')
+        var verItem = document.querySelector('#verification-item')
+        var jigsaw = document.querySelector('#jigsaw')
+        var jigsawImg = document.querySelector('#jigsaw-img')
+        var dragItem = document.querySelector('#drag-item')
+        var success = document.querySelector('#success')
+        var canDrag = false
+        var xPosition = 0
+        var yPosition = 0
+        function randomPosition(){
+            xPosition = parseInt(Math.random() * 150 + 250)
+            yPosition = parseInt(Math.random() * 100 + 100)
+            verItem.style.top = `${yPosition - 1}px`
+            verItem.style.left = `${xPosition - 1}px`
+            jigsaw.style.top = `${yPosition}px`
+            jigsaw.style.left = `5px`
+            jigsawImg.style.top = `-${yPosition}px`
+            jigsawImg.style.left = `-${xPosition}px`
+        }
+
+        randomPosition()
+
+        var xOffset = 0
+
+        window.onload = function(){
+            dragItem.onmousedown = function(){
+                xOffset = 0
+                function onMouseMove(e){
+                    xOffset += e.movementX
+                    if(xOffset > 0){
+                        if(xOffset < 430){
+                            dragItem.style.left = `${xOffset}px`
+                            jigsaw.style.left = `${xOffset}px`
+                        }else{
+                            dragItem.style.left = `${430}px`
+                            jigsaw.style.left = `${440}px`
+                        }
+                    }else{
+                    }
+                }
+                window.addEventListener('mousemove',onMouseMove)
+                window.onmouseup = function(){
+                    if(jigsaw.offsetLeft > xPosition - 5 && jigsaw.offsetLeft < xPosition + 5){
+                        console.log('验证成功')
+                        success.style.display = 'flex'
+                    }else{
+                        console.log('验证失败')
+                        dragItem.style.left = `${0}px`
+                        jigsaw.style.left = `${5}px`
+                    }
+                    window.removeEventListener('mousemove',onMouseMove)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

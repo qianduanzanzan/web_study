@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- flex布局由flex-container和flex-item组成 -->
+    <h1>容器的属性</h1>
+    <h4>普通情况</h4>
+    <div class="flex">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+
+    <h4>flex方向 flex-direction:</h4>
+    <div>row-reverse 反转反转</div>
+    <div class="flex reverse">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>column 垂直</p>
+    <div class="flex col">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>column-reverse 垂直反转</p>
+    <div class="flex col-reverse">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <h4>flex-wrap：nowrap "不换行"|wrap "换行，第一行在上方"|wrap-reverse "换行，第一行在下方"</h4>
+    <p>nowrap "不换行"</p>
+    <div class="flex nowrap">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>wrap "换行，第一行在上方"</p>
+    <div class="flex wrap">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>wrap-reverse "换行，第一行在下方"</p>
+    <div class="flex wrap-reverse">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <h4>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</h4>
+    <div class="flex flow">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <h4>justify-content:五个属性</h4>
+    <h4>align-items:除了 flex-start;center;flex-end，还有stretch和baseline</h4>
+    <p>stretch默认值，没有设置高度就占满整个容器</p>
+    <div class="flex stretch">
+        <div class="pink"></div>
+        <div class="lightsalmon"></div>
+        <div class="green"></div>
+    </div>
+    <p>baseline项目的第一行文字的基线对齐</p>
+    <div class="flex baseline">
+        <div class="a">123</div>
+        <div class="b">234</div>
+        <div class="c">345</div>
+    </div>
+    <h4>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用</h4>
+    <p>flex-start</p>
+    <div class="flex a-c f-s">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>flex-end</p>
+    <div class="flex a-c f-e">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>center</p>
+    <div class="flex a-c center">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>space-between</p>
+    <div class="flex a-c s-b">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>space-around</p>
+    <div class="flex a-c s-a">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </div>
+    <p>stretch 项目不设置高度，会占满整条轴线</p>
+    <div class="flex a-c s">
+        <div class="pink"></div>
+        <div class="lightsalmon"></div>
+        <div class="xxx"></div>
+    </div>
+    <h1>项目的属性</h1>
+    <h4>order:在项目中设置，该属性只接受数字，项目会根据order数字的大小排序，小的在前面</h4>
+    <div class="flex">
+        <div class="red order1">1</div>
+        <div class="yellow order3">2</div>
+        <div class="blue order2">3</div>
+    </div>
+    <h4>flex-grow:设置占容器的比例，如果设置了宽又设置这个属性，宽的计算就变得奇怪了</h4>
+    <div class="flex">
+        <div class="red grow1"></div>
+        <div class="yellow grow2"></div>
+        <div class="blue grow3"></div>
+    </div>
+    <h4>flex-shrink:如果容器的宽不够，设置flex-shrink值大于0的就会按照设置的比例来缩小</h4>
+    <div class="flex" style="width: 400px;">
+        <div class="red shrink0"></div>
+        <div class="yellow shrink1"></div>
+        <div class="blue shrink2"></div>
+    </div>
+    <h4>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）</h4>
+    <div class="flex">
+        <div class="red basis1"></div>
+        <div class="yellow basis2"></div>
+        <div class="blue basis3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+.red{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}
+
+.blue{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}
+
+.yellow{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.col{
+    flex-direction: column;
+}
+
+.col-reverse{
+    flex-direction: column-reverse;
+}
+
+p{
+    margin: 10px;
+    border-top: 1px solid #000;
+}
+
+.nowrap{
+    flex-wrap: nowrap;
+    width: 200px;
+}
+
+.wrap{
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.wrap-reverse{
+    flex-wrap: wrap-reverse;
+    width: 200px;
+}
+
+.flow{
+    flex-flow: row nowrap;
+}
+
+.green{
+    background-color: green;
+    height: 150px;
+    width: 100px;
+}
+
+.xxx{
+    background-color: green;
+    width: 100px;
+}
+
+.pink{
+    background-color: pink;
+    width: 100px;
+}
+
+.lightsalmon{
+    background-color: lightsalmon;
+    width: 100px;
+}
+
+.stretch{
+    align-items: stretch;
+}
+
+.baseline{
+    align-items: baseline;
+}
+
+.a{
+    background-color: blueviolet;
+    padding-top: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.b{
+    background-color: #ff1199;
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+.c{
+    background-color: #919191;
+    padding-top: 30px;
+    height: 100px;
+    width: 100px;
+}
+
+.a-c{
+    width: 202px;
+    height: 300px;
+    flex-wrap: wrap;
+    border: 1px solid #000000;
+}
+.f-s{
+    align-content: flex-start;
+}
+
+.f-e{
+    align-content: flex-end;
+}
+
+.center{
+    align-content: center;
+}
+
+.s-b{
+    align-content: space-between;
+}
+
+.s-a{
+    align-content: space-around;
+}
+
+.s{
+    align-content: stretch;
+}
+
+.order1{
+    order: 1;
+}
+
+.order2{
+    order: 2;
+}
+
+.order3{
+    order: 3;
+}
+
+.grow1{
+    width: auto;
+    flex-grow: 1;
+}
+
+.grow2{
+    width: auto;
+    flex-grow: 2;
+}
+
+.grow3{
+    width: auto;
+    flex-grow: 3;
+}
+
+.shrink0{
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.shrink1{
+    flex-shrink: 1;
+    width: 200px;
+}
+
+.shrink2{
+    flex-shrink: 2;
+    width: 200px;
+}
+
+.basis1{
+    flex-basis: 120px;
+}
+
+.basis2{
+    flex-basis: 100px;
+}
+
+.basis3{
+    flex-basis: 400px;
+}
