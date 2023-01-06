@@ -5,6 +5,7 @@ function debounce(fn, time = 500) {
         if (!timeout) {
             fn(...arguments)
             timeout = setTimeout(() => {
+                clearTimeout(timeout)
                 timeout = null
             }, time)
         }
@@ -34,3 +35,11 @@ const a = debounce((aaa) => {
 const b = thorttle((aaa) => {
     console.log(aaa)
 }, 500)
+
+const c = {
+    d:function(){
+        console.log(222222)
+    }
+}
+
+const d = debounce(c.d, 500)

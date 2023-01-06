@@ -1,0 +1,45 @@
+标题：防抖与节流
+正文：
+1、防抖(debounce)：顾名思义，防抖就是防止抖动，避免事件的重复触发。（类似于在游戏中的技能冷却，事件触发一次之后的一定时间内不会再次触发）
+	实现：
+		思路：既然是一定的时间，那么肯定会用到setTimeout
+				let timeout = null
+		编码：function debounce(){
+				if(!timeout){
+					console.log('触发了事件')
+					timeout = setTimeout(() => {
+						clearTimeout(timeout)
+						timeout = null
+					},500)
+				}
+			}
+		就这样，一个简单的防抖函数就完成了，但是这样每写一个防抖函数就要多写一大段代码，我们来尝试提取公共代码，让以后写防抖函数都能简单又快乐
+		思考：我们现在要实现什么功能？要实现一个函数，返回防抖的函数
+		      既然是一个函数，那么想一下函数的入参是什么呢？每个不同的防抖函数最重要的就是执行内容以及冷却时间
+			  那我们开始吧
+			  function debounce(fn,time){
+
+			  }
+			  这个函数要返回的是一个防抖函数
+			  function debounce(fn,time){
+				return function(){
+
+				}
+			  }
+
+			  在函数中加入防抖函数需要的代码
+			  function debounce(fn,time){
+				let timeout = null
+				return function(){
+					if(!timeout){
+						fn()
+						timeout = setTimeout(() => {
+							clearTimeout(timeout)
+							timeout = null
+						},time)
+					}
+				}
+			  }
+			  这里就有一个疑问了，为什么let timeout = null要放在外部函数，而其他的要放在内部函数呢
+
+		
