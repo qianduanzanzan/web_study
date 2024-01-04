@@ -2,7 +2,7 @@ const PENDING = 'pending';
 const RESOLVED = 'resolved';
 const REJECTED = 'rejected';
 
-function MyPromise(fn){
+function MyPromise(fn) {
     const that = this
     that.status = PENDING
     that.value = null
@@ -11,8 +11,8 @@ function MyPromise(fn){
     that.resolveArr = []
     that.rejectArr = []
 
-    function resolve(val){
-        if(that.status === PENDING){
+    function resolve(val) {
+        if (that.status === PENDING) {
             that.status = RESOLVED
             that.value = val
             that.resolveArr.forEach(cb => {
@@ -21,8 +21,8 @@ function MyPromise(fn){
         }
     }
 
-    function reject(reason){
-        if(that.status === PENDING){
+    function reject(reason) {
+        if (that.status === PENDING) {
             that.status = REJECTED
             that.reason = reason
             that.rejectArr.forEach(cb => {
@@ -33,40 +33,40 @@ function MyPromise(fn){
 
     try {
         fn(resolve, reject);
-    } catch(e) {
+    } catch (e) {
         reject(e);
     }
 }
 
-MyPromise.prototype.then = function(fn){
+MyPromise.prototype.then = function (fn) {
     const that = this
 
-    if(that.status === PENDING){
+    if (that.status === PENDING) {
         that.resolveArr.push(fn)
     }
 
-    if(that.status === RESOLVED){
+    if (that.status === RESOLVED) {
         fn(this.value)
     }
 
     return that
 }
 
-MyPromise.prototype.catch = function(fn){
+MyPromise.prototype.catch = function (fn) {
     const that = this
 
-    if(that.status === PENDING){
+    if (that.status === PENDING) {
         that.rejectArr.push(fn)
     }
 
-    if(that.status === REJECTED){
+    if (that.status === REJECTED) {
         fn(this.reason)
     }
 
     return that
 }
 
-const a = new MyPromise((resolve,reject) => {
+const a = new MyPromise((resolve, reject) => {
     // resolve(345)
     // reject(665)
     setTimeout(() => {

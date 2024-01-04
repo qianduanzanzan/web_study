@@ -1,5 +1,5 @@
 const a = {
-    a:'a'
+    a: 'a'
 }
 
 const set = new Set()
@@ -26,22 +26,22 @@ console.log(weakSet.has(a))
 
 const map = new Map()
 
-map.set('a','1234')
-map.set('b',a)
-map.set(a,a)
+map.set('a', '1234')
+map.set('b', a)
+map.set(a, a)
 
 console.log(map)
 console.log(map.size)
 console.log(map.entries())
 console.log(map.get('b'))
 console.log(map.has('b'))
-map.forEach((item,i) => {
-    console.log(item,i)
+map.forEach((item, i) => {
+    console.log(item, i)
 })
 
 const weakMap = new WeakMap()
 
-weakMap.set(a,'1234')
+weakMap.set(a, '1234')
 
 // weakMap.set('a','1234')
 

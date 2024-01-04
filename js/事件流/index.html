@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事件流</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
-        .btn-box{
+
+        .btn-box {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -19,36 +20,38 @@
     </style>
 </head>
 <body>
-    <div id="btn-box">
-        <button id="btn">触发事件</button>
-    </div>
-    
-    <script>
+<div id="btn-box">
+    <button id="btn">触发事件</button>
+</div>
 
-        /**
-         * @desc dom事件流
-         * 1：捕获阶段： 从dom的最外层向里一层一层的寻找，直到找到触发元素
-         * 2：触发阶段： 触发元素方法
-         * 3：冒泡阶段： 从触发元素一层一层向外冒泡，到最外层为止
-         * 
-         * 一般都是事件冒泡才会触发父元素的事件 addEventListener中的第三个参数传入一个Boolean值，三个参数为false的时候，父元素事件在冒泡阶段触发，三个参数为true的时候，父元素事件在捕获阶段触发
-         * 
-        */
+<script>
+
+    /**
+     * @desc dom事件流
+     * 1：捕获阶段： 从dom的最外层向里一层一层的寻找，直到找到触发元素
+     * 2：触发阶段： 触发元素方法
+     * 3：冒泡阶段： 从触发元素一层一层向外冒泡，到最外层为止
+     *
+     * 一般都是事件冒泡才会触发父元素的事件 addEventListener中的第三个参数传入一个Boolean值，三个参数为false的时候，父元素事件在冒泡阶段触发，三个参数为true的时候，父元素事件在捕获阶段触发
+     *
+     */
         // DOM2级事件处理程序
-        const btn = document.getElementById('btn');
-        // 添加事件处理程序
-        // btn.onclick = print;
-        btn.addEventListener('click',print,false)
-        function print() {
-            console.log('btn click');
-        }
+    const btn = document.getElementById('btn');
+    // 添加事件处理程序
+    // btn.onclick = print;
+    btn.addEventListener('click', print, false)
 
-        const btnBox = document.getElementById('btn-box');
-        // 添加事件处理程序
-        btnBox.addEventListener('click',print1,true)
-        function print1() {
-            console.log('btn-box click');
-        }
-    </script>
+    function print() {
+        console.log('btn click');
+    }
+
+    const btnBox = document.getElementById('btn-box');
+    // 添加事件处理程序
+    btnBox.addEventListener('click', print1, true)
+
+    function print1() {
+        console.log('btn-box click');
+    }
+</script>
 </body>
 </html>

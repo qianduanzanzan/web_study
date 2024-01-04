@@ -2,14 +2,15 @@
  * 原型链继承
  */
 
-function superType(){
-    this.friends = ['小明','小红']
-    this.sayHi = function(){
+function superType() {
+    this.friends = ['小明', '小红']
+    this.sayHi = function () {
         console.log('hi')
     }
 }
 
-function subType(){}
+function subType() {
+}
 
 subType.prototype = new superType()
 

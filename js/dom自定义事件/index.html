@@ -7,34 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <ul id="ul">
-        <li id="li">
-            <button id="btn">触发</button>
-        </li>
-    </ul>
+<ul id="ul">
+    <li id="li">
+        <button id="btn">触发</button>
+    </li>
+</ul>
 </body>
 
 <script>
-    window.onload = function(){
+    window.onload = function () {
         // 方法一 document.createEvent
         const myEvent = document.createEvent('CustomEvent')
         // initEvent 三个参数，第一个是事件名称，第二个代表是不是取消冒泡 第三个是事件能不能被取消
-        myEvent.initEvent('myEvent',true,false)
+        myEvent.initEvent('myEvent', true, false)
 
         const btn = document.getElementById('btn')
         const li = document.getElementById('li')
         const ul = document.getElementById('ul')
 
-        btn.addEventListener('myEvent',(e) => {
-            console.log(e,'btn')
+        btn.addEventListener('myEvent', (e) => {
+            console.log(e, 'btn')
         })
 
-        li.addEventListener('myEvent',(e) => {
-            console.log(e,'li')
-        },true)
+        li.addEventListener('myEvent', (e) => {
+            console.log(e, 'li')
+        }, true)
 
-        ul.addEventListener('myEvent',(e) => {
-            console.log(e,'ul')
+        ul.addEventListener('myEvent', (e) => {
+            console.log(e, 'ul')
         })
 
         setTimeout(() => {
@@ -42,21 +42,21 @@
         }, 1000);
 
         // 方法二 new Event，两个参数，一个传事件名称，一个传配置
-        const myEvent1 = new Event('love',{
+        const myEvent1 = new Event('love', {
             bubbles: true,
             cancelable: true
         })
 
-        btn.addEventListener('love',(e) => {
-            console.log(e,'btn')
+        btn.addEventListener('love', (e) => {
+            console.log(e, 'btn')
         })
 
-        li.addEventListener('love',(e) => {
-            console.log(e,'li')
-        },true)
+        li.addEventListener('love', (e) => {
+            console.log(e, 'li')
+        }, true)
 
-        ul.addEventListener('love',(e) => {
-            console.log(e,'ul')
+        ul.addEventListener('love', (e) => {
+            console.log(e, 'ul')
         })
 
         setTimeout(() => {
@@ -64,22 +64,22 @@
         }, 2000);
 
         // 方法三 new CustomEvent，两个参数，一个传事件名称，一个传配置，可以在配置中的detail中传自定义数据
-        const myEvent2 = new CustomEvent('love1',{
+        const myEvent2 = new CustomEvent('love1', {
             detail: 123,
             bubbles: true,
             cancelable: true
         })
 
-        btn.addEventListener('love1',(e) => {
-            console.log(e,'btn')
+        btn.addEventListener('love1', (e) => {
+            console.log(e, 'btn')
         })
 
-        li.addEventListener('love1',(e) => {
-            console.log(e,'li')
-        },true)
+        li.addEventListener('love1', (e) => {
+            console.log(e, 'li')
+        }, true)
 
-        ul.addEventListener('love1',(e) => {
-            console.log(e,'ul')
+        ul.addEventListener('love1', (e) => {
+            console.log(e, 'ul')
         })
 
         setTimeout(() => {

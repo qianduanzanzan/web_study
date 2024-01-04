@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video class="video" src="https://vd3.bdstatic.com/mda-phb4zupajucdrvk8/720p/h264/1691811098843544242/mda-phb4zupajucdrvk8.mp4?v_from_s=hkapp-haokan-nanjing&auth_key=1693198558-0-0-058d15cdf82d005446bfe1641e2e742c&bcevod_channel=searchbox_feed&pd=1&cr=2&cd=0&pt=3&logid=3357941003&vid=14952646661104174081&klogid=3357941003&abtest=111803_4-112162_3-112170_1" autoplay controls width="500" height="auto">
+        <!-- <source src="https://vd3.bdstatic.com/mda-phb4zupajucdrvk8/720p/h264/1691811098843544242/mda-phb4zupajucdrvk8.mp4?v_from_s=hkapp-haokan-nanjing&auth_key=1693198558-0-0-058d15cdf82d005446bfe1641e2e742c&bcevod_channel=searchbox_feed&pd=1&cr=2&cd=0&pt=3&logid=3357941003&vid=14952646661104174081&klogid=3357941003&abtest=111803_4-112162_3-112170_1" type="video/mp4"> -->
+    </video>
+    <button class="btn" onclick="play()">123</button>
+    <script>
+        var video = document.querySelector('.video');
+        var btn = document.querySelector('.btn')
+        video.play()
+
+        setTimeout(() => {
+            video.pause()
+            video.load()
+        }, 10)
+
+        function play(){
+            video.currentTime = 5
+            video.play();
+        }
+
+        function pause(){
+            video.pause();
+        }
+
+        function stop(){
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        function getTime(){
+            console.log(video.currentTime);
+        }
+
+        function setTime(){
+            video.currentTime = 10;
+        }
+
+        function getVolume(){
+            console.log(video.volume);
+        }
+    </script>
+</body>
+</html>

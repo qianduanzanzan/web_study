@@ -1,23 +1,23 @@
 // proxy只能代理一层
 
 /**
- * 
+ *
  * 目标： 实现一个函数，传入一个对象，返回一个被完全代理的对象
- * 
+ *
  */
 
-function toProxy(obj){
-    if(typeof obj == 'object'){
-        obj = new Proxy(obj,{
-            get:function(target,key,value){
-                console.log(target,key)
+function toProxy(obj) {
+    if (typeof obj == 'object') {
+        obj = new Proxy(obj, {
+            get: function (target, key, value) {
+                console.log(target, key)
                 return target[key]
             }
         })
         for (const key in obj) {
             if (Object.hasOwnProperty.call(obj, key)) {
                 const element = obj[key];
-                if(typeof element == 'object'){
+                if (typeof element == 'object') {
                     toProxy(element)
                 }
             }
@@ -25,7 +25,6 @@ function toProxy(obj){
     }
     return obj
 }
-
 
 
 const aaa = {

@@ -1,10 +1,10 @@
 /**
  * 宏任务：settimeout、
- * 
- * 
+ *
+ *
  * 微任务：promise.then、promise.catch、promise.finally await后面的代码是立刻执行的，但是下面的代码都是微任务
- * 
- * 
+ *
+ *
  * 执行顺序：同步任务 => 微任务 => 宏任务
  */
 
@@ -22,29 +22,29 @@
 //             }).then((respone => {
 //                 console.log(respone);
 //             }))
-   
+
 //         }))
-   
+
 //         function reoloveTest() {
 //             console.log('reolove是同步的哦,不要搞错了哦');
 //             return "执行第二轮宏任务后的微任务2"
 //         }
-   
+
 //         new Promise((resolve, reject) => {
 //             resolve(reoloveTest())
 //         }).then((res => {
 //             console.log(res);
 //         }))
-   
+
 //         setTimeout(() => {
 //             console.log("开始第四轮宏任务");
 //             console.log("结束第四轮宏任务,没有微任务了,也没有宏任务了,结束");
 //         })
-   
+
 //         console.log("结束第二轮宏任务,有微任务,准备执行微任务");
-   
+
 //     }, 0);
-   
+
 //     setTimeout(() => {
 //         console.log("开始第三宏任务");
 //         Promise.resolve(console.log("再次提醒resolve里的代码是同步任务哦"))
@@ -53,7 +53,7 @@
 //         }).then((res => {
 //             console.log(res);
 //         }))
-   
+
 //         new Promise((resolve, reject) => {
 //             resolve("执行第三轮宏任务后的微任务2,有宏任务,准备执行宏任务")
 //         }).then((res => {
@@ -61,16 +61,16 @@
 //         }))
 //         console.log("结束第三轮宏任务,有微任务,准备执行微任务");
 //     }, 0);
-   
+
 //     new Promise((resolve, reject) => {
 //         resolve("执行微任务1")
 //     }).then((res => {
 //         console.log(res);
 //     }))
-   
+
 //     console.log("first结束");
 // }
-   
+
 // function second() {
 //     console.log("second开始");
 //     new Promise((resolve, reject) => {
@@ -80,8 +80,8 @@
 //     }))
 //     console.log("second结束");
 // }
-   
-   
+
+
 // console.log("开始第一轮script宏任务");
 // first()
 // second()
@@ -93,12 +93,12 @@
 
 const a = {
     name: 'ddd',
-    sayHi:function(){
+    sayHi: function () {
         console.log(`Hi! my name is ${this.name}`)
     }
 }
 
-function B(name){
+function B(name) {
     this.name = name
 }
 

@@ -7,33 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="a1()">普通创建</button>
-    <button onclick="a2()">documentFragment创建</button>
+<button onclick="a1()">普通创建</button>
+<button onclick="a2()">documentFragment创建</button>
 
-    <script>
-        function a1() {
-    console.time("普通方式创建")
-    for (let i = 0; i < 5000; i++) {
-      let op = document.createElement("span");
-      let oText = document.createTextNode(i);
-      op.appendChild(oText);
-      document.body.appendChild(op);
+<script>
+    function a1() {
+        console.time("普通方式创建")
+        for (let i = 0; i < 5000; i++) {
+            let op = document.createElement("span");
+            let oText = document.createTextNode(i);
+            op.appendChild(oText);
+            document.body.appendChild(op);
+        }
+        console.timeEnd("普通方式创建")
     }
-    console.timeEnd("普通方式创建")
-  }
 
-  function a2() {
-    console.time("documentFragment创建")
-    let oFragmeng = document.createDocumentFragment(); //创建文档碎片
-    for (let i = 0; i < 5000; i++) {
-      let op = document.createElement("span");
-      let oText = document.createTextNode(i);
-      op.appendChild(oText);
-      oFragmeng.appendChild(op);
+    function a2() {
+        console.time("documentFragment创建")
+        let oFragmeng = document.createDocumentFragment(); //创建文档碎片
+        for (let i = 0; i < 5000; i++) {
+            let op = document.createElement("span");
+            let oText = document.createTextNode(i);
+            op.appendChild(oText);
+            oFragmeng.appendChild(op);
+        }
+        document.body.appendChild(oFragmeng); //最后一次性添加到document中
+        console.timeEnd("documentFragment创建")
     }
-    document.body.appendChild(oFragmeng); //最后一次性添加到document中
-    console.timeEnd("documentFragment创建")
-  }
-    </script>
+</script>
 </body>
 </html>

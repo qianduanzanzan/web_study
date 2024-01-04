@@ -18,8 +18,8 @@ function flat(obj, key = "", res = {}, isArray = false) {
 const obj = {
     a: {
         b: 1,
-        e:[{
-            xx:69
+        e: [{
+            xx: 69
         }]
     },
     c: [1, 2, 3, 4]

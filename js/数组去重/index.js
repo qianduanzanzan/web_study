@@ -1,12 +1,12 @@
-function arrayDuplicateRemoval(arr,key){
-    if(!key){
+function arrayDuplicateRemoval(arr, key) {
+    if (!key) {
         return Array.from(new Set(arr))
     }
     const tmpObj = {}
     const result = []
     for (let i = 0; i < arr.length; i++) {
         const item = arr[i];
-        if(!tmpObj[item[key]]){
+        if (!tmpObj[item[key]]) {
             result.push(item)
         }
         tmpObj[item[key]] = true
@@ -16,7 +16,7 @@ function arrayDuplicateRemoval(arr,key){
 }
 
 
-console.log(arrayDuplicateRemoval([1,2,3,4,5,6,1,2,3,5,6]))
+console.log(arrayDuplicateRemoval([1, 2, 3, 4, 5, 6, 1, 2, 3, 5, 6]))
 
 const a = [
     {name: 22},
@@ -30,4 +30,4 @@ const a = [
     {name: 27}
 ]
 
-console.log(arrayDuplicateRemoval(a,'name'))
+console.log(arrayDuplicateRemoval(a, 'name'))

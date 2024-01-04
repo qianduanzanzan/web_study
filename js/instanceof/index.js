@@ -1,32 +1,33 @@
-function myInstanceof(data,type){
+function myInstanceof(data, type) {
     let proto = data.__proto__;
     const prototype = type.prototype;
 
-    while(proto){
+    while (proto) {
 
-        if(proto === prototype){
+        if (proto === prototype) {
             return true
         }
 
         proto = proto.__proto__
-        if(proto === null){
+        if (proto === null) {
             return false
         }
     }
 }
 
-function B(){
+function B() {
     this.b = true
 }
 
 const a = new B()
 
-console.log(myInstanceof(a,Object))
+console.log(myInstanceof(a, Object))
 
-class C{
-    constructor(){
+class C {
+    constructor() {
         this.c = true
     }
 }
+
 const d = new C()
-console.log(myInstanceof(d,C))
+console.log(myInstanceof(d, C))

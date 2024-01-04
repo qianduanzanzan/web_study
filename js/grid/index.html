@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        border-radius: 0px;
+    }
+    .a{
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(32, 1fr);
+        grid-template-rows: repeat(32, 1fr);
+    }
+    .b{
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background-color: red;
+    }
+
+    .cell{
+        position: relative;
+        cursor: move;
+    }
+
+    .icon{
+        content: ' ';
+        width: 8px;
+        height: 8px;
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        cursor:nw-resize;
+    }
+
+    /* .c{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background-color: blue;
+    } */
+</style>
+<body>
+    <div class="a">
+        <!-- <div class="c"></div> -->
+        <div draggable="true" class="b cell">
+            <div class="icon"></div>
+        </div>
+    </div>
+    <script>
+        const cellH = Math.ceil(document.querySelector('.a').offsetHeight / 32);
+        const cellW = Math.ceil(document.querySelector('.a').offsetWidth / 32);
+        console.log(cellH,cellW)
+        const cell = document.querySelector('.cell');
+        let startX = 0;
+        let startY = 0;
+        let rowStart = 1;
+        let colStart = 1;
+        let rowEnd = 1;
+        let colEnd = 5;
+        cell.addEventListener('dragstart', (e) => {
+            startY = e.clientY;
+            startX = e.clientX;
+        })
+        cell.addEventListener('dragend', (e) => {
+            console.log(e)
+            const endY = e.clientY;
+            const endX = e.clientX;
+            console.log(endY,endX)
+            const moveY = endY - startY;
+            const moveX = endX - startX;
+            const colIndex = Math.floor(moveX / cellW)
+            const rowIndex = Math.floor(moveY / cellH)
+            e.target.style.gridRowStart = rowIndex + rowStart;
+            rowStart += rowIndex
+            e.target.style.gridColumnStart = colIndex + colStart;
+            colStart += colIndex
+            e.target.style.gridRowEnd = rowIndex + rowEnd;
+            rowEnd += rowIndex
+            e.target.style.gridColumnEnd = colIndex + colEnd;
+            colEnd += colIndex
+            console.log(rowStart, rowEnd,colStart,colEnd)
+        })
+    </script>
+</body>
+</html>

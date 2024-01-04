@@ -1,22 +1,22 @@
-window.addEventListener('unhandledrejection',event => {
+window.addEventListener('unhandledrejection', event => {
     console.log(event.promise)
     // console.error(event)
 })
 
-function a(){
-    return new Promise((resolve,reject) => {
+function a() {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(888)
-        },1000)
+        }, 1000)
     })
 }
 
-async function b(){
+async function b() {
     const c = await a()
     console.log(c)
 }
 
-function c(){
+function c() {
     a().then(res => {
         console.log(res)
         return 123
@@ -25,7 +25,7 @@ function c(){
     })
 }
 
-(async function(){
+(async function () {
     await b()
     console.log(6666666)
 })()

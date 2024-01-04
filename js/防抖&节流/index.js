@@ -37,7 +37,7 @@ const b = thorttle((aaa) => {
 }, 500)
 
 const c = {
-    d:function(){
+    d: function () {
         console.log(222222)
     }
 }

@@ -40,7 +40,8 @@
 // console.log(Person.__proto__)
 
 var foo = {},
-    F = function(){};
+    F = function () {
+    };
 Object.prototype.a = 'value a';
 Function.prototype.b = 'value b';
 

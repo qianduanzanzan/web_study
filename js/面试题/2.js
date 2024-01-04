@@ -1,6 +1,7 @@
-console.log(typeof (() => {})) // function
+console.log(typeof (() => {
+})) // function
 
-console.log(typeof ['前端有的玩','公众号']) // object
+console.log(typeof ['前端有的玩', '公众号']) // object
 
 console.log(typeof null) // object
 
